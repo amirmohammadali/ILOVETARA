@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love for My Girlfriend</title>
+    <style>
+        @keyframes dance {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(20deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-20deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background-color: #fff0f5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .heart {
+            color: #ff69b4;
+            font-size: 2em;
+            margin: 0 5px;
+        }
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 45%;
+            height: auto;
+            border: 5px solid #ff69b4;
+            border-radius: 10px;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #ff69b4;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .footer {
+            font-size: 1.1em;
+            color: #333;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: 2px solid #ff69b4;
+            border-radius: 5px;
+            background-color: #fff0f5;
+            color: #ff69b4;
+            cursor: pointer;
+        }
+        .button-yes {
+            background-color: #ff69b4;
+            color: #fff;
+        }
+        .button-no {
+            position: relative;
+        }
+    </style>
+    <script>
+        function moveButton() {
+            const noButton = document.querySelector('.button-no');
+            const x = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+
+        function yesDance() {
+            const yesButton = document.querySelector('.button-yes');
+            yesButton.style.animation = 'dance 1s infinite';
+            setTimeout(() => {
+                window.location.href = 'yes.html';
+            }, 3000);
+        }
+    </script>
+</head>
+<body>
+    <h1>I Love You, Tara! <span class="heart">❤️</span></h1>
+    <p>You are the most amazing person in my life, and I am so grateful to have you by my side.</p>
+    
+    <h2>Our Beautiful Pictures</h2>
+    <div class="photo-container">
+        <img src="images/tara/photobooth.jpg" alt="A beautiful moment with my girlfriend">
+        <img src="images/tara/taranme.jpg" alt="A beautiful moment with my girlfriend">
+    </div>
+    
+    <h2>A Special Video</h2>
+    <video controls>
+        <source src="images/videos/taras_so_pretty.MOV" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <p class="footer">Looking forward to creating many more beautiful memories together. I love you!</p>
+
+    <h2>Do you still love me?</h2>
+    <div class="buttons">
+        <button class="button button-yes" onclick="yesDance()">Yes</button>
+        <button class="button button-no" onmouseover="moveButton()">No</button>
+    </div>
+</body>
+</html>
